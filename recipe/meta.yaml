@@ -29,6 +29,7 @@ requirements:
     - python
     - sqlalchemy
     - tablib
+    - pandas
     - docopt
 
 test:
