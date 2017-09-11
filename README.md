@@ -14,9 +14,7 @@ Summary: SQL for Humans
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/records-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/records-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/records-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/records-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/records-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/records-feedstock/branch/master)
+All platforms: [![Circle CI](https://circleci.com/gh/conda-forge/records-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/records-feedstock)
 
 Current release info
 ====================
