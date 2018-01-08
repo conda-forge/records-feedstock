@@ -1,8 +1,8 @@
 {% set name = "records" %}
-{% set version = "0.5.1" %}
+{% set version = "0.5.2" %}
 {% set compress_type = "tar.gz" %}
 {% set hash_type = "sha256" %}
-{% set hash = "f3946f19d5c7cdfe02acff2cb461afb609119171f3990fef5335d72a8992c788" %}
+{% set hash = "238cba35e8efbb724493bbb195bd027d9e78db4a978597969a7af0f722ac3686" %}
 {% set build = 0 %}
 
 package:
@@ -30,8 +30,8 @@ requirements:
     - python
     - sqlalchemy
     - tablib
-    - pandas
     - docopt
+    - pandas
 
 test:
   imports:
