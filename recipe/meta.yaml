@@ -1,8 +1,8 @@
 {% set name = "records" %}
-{% set version = "0.5.0" %}
+{% set version = "0.5.2" %}
 {% set compress_type = "tar.gz" %}
 {% set hash_type = "sha256" %}
-{% set hash = "bf3a28907c25c5403eb9183e3ab8353fe74411f6f58cc609c15ae123488e20fb" %}
+{% set hash = "238cba35e8efbb724493bbb195bd027d9e78db4a978597969a7af0f722ac3686" %}
 {% set build = 0 %}
 
 package:
@@ -15,8 +15,9 @@ source:
   {{ hash_type }}: {{ hash }}
 
 build:
+  noarch: python
   entry_points:
-    - records=records:cli
+    - records = records:cli
   number: {{ build }}
   script: python setup.py install --single-version-externally-managed --record=record.txt
 
@@ -30,6 +31,7 @@ requirements:
     - sqlalchemy
     - tablib
     - docopt
+    - pandas
 
 test:
   imports:
