@@ -1,8 +1,8 @@
 {% set name = "records" %}
-{% set version = "0.5.2" %}
+{% set version = "0.5.3" %}
 {% set compress_type = "tar.gz" %}
 {% set hash_type = "sha256" %}
-{% set hash = "238cba35e8efbb724493bbb195bd027d9e78db4a978597969a7af0f722ac3686" %}
+{% set hash = "47e4874096f4a8f4b5bcad8c7c7cf512be36186e6e263ff3dfd750b05ff0d3c4" %}
 {% set build = 0 %}
 
 package:
