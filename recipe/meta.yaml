@@ -3,7 +3,7 @@
 {% set compress_type = "tar.gz" %}
 {% set hash_type = "sha256" %}
 {% set hash = "238cba35e8efbb724493bbb195bd027d9e78db4a978597969a7af0f722ac3686" %}
-{% set build = 0 %}
+{% set build = 1 %}
 
 package:
   name: {{ name|lower }}
@@ -23,11 +23,11 @@ build:
 
 requirements:
   build:
-    - python
+    - python >=3.6
     - setuptools
 
   run:
-    - python
+    - python >=3.6
     - sqlalchemy
     - tablib
     - docopt
@@ -51,3 +51,4 @@ about:
 extra:
   recipe-maintainers:
     - pmlandwehr
+    - jan-janssen
