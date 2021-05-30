@@ -14,10 +14,11 @@ build:
   entry_points:
     - records = records:cli
   number: 0
-  script: python setup.py install --single-version-externally-managed --record=record.txt
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
-  build:
+  host:
+    - pip
     - python >=3.6
     - setuptools
 
