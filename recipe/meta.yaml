@@ -1,24 +1,19 @@
 {% set name = "records" %}
-{% set version = "0.5.2" %}
-{% set compress_type = "tar.gz" %}
-{% set hash_type = "sha256" %}
-{% set hash = "238cba35e8efbb724493bbb195bd027d9e78db4a978597969a7af0f722ac3686" %}
-{% set build = 1 %}
+{% set version = "0.5.3" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.{{ compress_type }}
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}
-  {{ hash_type }}: {{ hash }}
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+   sha256: 47e4874096f4a8f4b5bcad8c7c7cf512be36186e6e263ff3dfd750b05ff0d3c4
 
 build:
   noarch: python
   entry_points:
     - records = records:cli
-  number: {{ build }}
+  number: 0
   script: python setup.py install --single-version-externally-managed --record=record.txt
 
 requirements:
@@ -39,6 +34,10 @@ test:
 
   commands:
     - records --help
+    - pip check
+    
+  requires: 
+    - pip
 
 about:
   home: https://github.com/kennethreitz/records
