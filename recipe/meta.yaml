@@ -1,5 +1,5 @@
 {% set name = "records" %}
-{% set version = "0.5.3" %}
+{% set version = "0.6.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 47e4874096f4a8f4b5bcad8c7c7cf512be36186e6e263ff3dfd750b05ff0d3c4
+  sha256: 320265b94ae87ca5d22643811aa199ce8a8c50d50064053b1a9a54e6ae565d9f
 
 build:
   noarch: python
@@ -24,11 +24,11 @@ requirements:
 
   run:
     - python >=3.6
-    - sqlalchemy
+    - sqlalchemy >=2.0
     - tablib
     - docopt
     - pandas
-    - openpyxl <2.5.0
+    - openpyxl >2.6.0
 
 test:
   imports:
@@ -37,8 +37,8 @@ test:
   commands:
     - records --help
     - pip check
-    
-  requires: 
+
+  requires:
     - pip
 
 about:
