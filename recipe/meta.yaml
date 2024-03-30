@@ -24,11 +24,11 @@ requirements:
 
   run:
     - python >=3.6
-    - sqlalchemy
+    - sqlalchemy >=2.0
     - tablib
     - docopt
     - pandas
-    - openpyxl <2.5.0
+    - openpyxl >2.6.0
 
 test:
   imports:
