@@ -1,0 +1,60 @@
+schema_version: 1
+
+context:
+  name: records
+  version: 0.6.0
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
+  sha256: 320265b94ae87ca5d22643811aa199ce8a8c50d50064053b1a9a54e6ae565d9f
+
+build:
+  number: 3
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  python:
+    entry_points:
+      - records = records:cli
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - setuptools
+  run:
+    - python >=${{ python_min }}
+    - sqlalchemy >=2.0
+    - tablib >=0.11.4
+    - openpyxl >2.6.0
+    - docopt
+
+tests:
+  - python:
+      imports:
+        - records
+      pip_check: true
+      python_version:
+        - ${{ python_min }}
+        - "*"
+  - requirements:
+      run:
+        - pip
+        - python ${{ python_min }}.*
+    script:
+      - records --help
+
+about:
+  license_file: LICENSE
+  license: ISC
+  summary: SQL for Humans
+  homepage: https://github.com/kennethreitz/records
+  repository: https://github.com/kennethreitz/records
+
+extra:
+  recipe-maintainers:
+    - pmlandwehr
+    - jan-janssen
