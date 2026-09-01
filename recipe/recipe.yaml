@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: records
-  version: "0.6.0"
+  version: 0.6.0
 
 package:
   name: ${{ name|lower }}
@@ -22,7 +22,7 @@ build:
 
 requirements:
   host:
-    - python ${{ python_min }}
+    - python ${{ python_min }}.*
     - pip
     - setuptools
   run:
@@ -43,7 +43,7 @@ tests:
   - requirements:
       run:
         - pip
-        - python ${{ python_min }}
+        - python ${{ python_min }}.*
     script:
       - records --help
 
